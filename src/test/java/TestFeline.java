@@ -2,19 +2,25 @@ import com.example.Feline;
 import org.junit.Assert;
 import org.junit.Test;
 import com.example.Animal;
+import java.util.List;
+
+
+import static org.junit.Assert.assertEquals;
+
 
 public class TestFeline {
     Feline feline = new Feline();
     @Test
     public void countOfKittens(){
-        Assert.assertEquals(feline.getKittens(),1);
+        assertEquals(feline.getKittens(),1);
     }
     @Test
     public void kindOfFamily(){
-        Assert.assertEquals(feline.getFamily(),"Кошачьи");
+        assertEquals(feline.getFamily(),"Кошачьи");
     }
     @Test
-    public void kindOfEatingFood() throws Exception {
-        Assert.assertEquals(feline.getFood("Хищник"), " Животные, Птицы, Рыба");
+    public void testEatMeat() throws Exception {
+        List<String> food = feline.eatMeat();
+        assertEquals("Животные", food.get(0));
     }
 }

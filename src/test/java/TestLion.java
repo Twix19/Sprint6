@@ -8,7 +8,7 @@ import org.mockito.MockitoAnnotations;
 import java.util.Arrays;
 import com.example.Feline;
 
-public class TestLion  {
+public class TestLion {
     @Before
     public void init() {
         MockitoAnnotations.initMocks(this);
@@ -26,7 +26,7 @@ public class TestLion  {
     Lion lion = new Lion();
     @Test
     public void countOfKittens(){
-        Assert.assertEquals(lion.getKittens(),1);
+        Assert.assertEquals(1, lion.getKittens());
     }
     @Test
     public void testDoesHaveMane() throws Exception {
@@ -36,8 +36,8 @@ public class TestLion  {
         Assert.assertEquals(false, femaleLion.doesHaveMane());
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void testInvalidSex() throws Exception {
-        Lion invalidLion = new Lion("Используйте допустимые значения пола животного - самец или самка");
+        Lion invalidLion = new Lion("Неверное значение пола животного - должно быть 'Самец' или 'Самка'");
     }
 }
