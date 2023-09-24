@@ -1,11 +1,11 @@
 import com.example.Feline;
 import org.junit.Test;
-import org.junit.Assert;
+
 import static org.junit.Assert.assertEquals;
 import java.util.List;
 
 
-public class NegativeTestFeline {
+public class NegativeFelineTest {
     Feline feline = new Feline();
     @Test
     public void errorCountOfKittens(){
@@ -27,7 +27,7 @@ public class NegativeTestFeline {
 
     @Test
     public void testEatMeat() throws Exception {
-        List<String> expectedFood = List.of("Животные", "Рыба");
+        List<String> expectedFood = List.of("Животные", "Птица", "Рыба");
         List<String> actualFood = feline.eatMeat();
         assertEquals(expectedFood, actualFood);
     }

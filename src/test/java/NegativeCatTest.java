@@ -7,7 +7,7 @@ import org.mockito.Mockito;
 import java.util.Arrays;
 
 
-public class NegativeTestCat {
+public class NegativeCatTest {
     @Mock
     Feline feline = new Feline();
     @Test

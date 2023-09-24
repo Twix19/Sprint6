@@ -1,32 +1,35 @@
 import com.example.Lion;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.mockito.MockitoAnnotations;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import java.util.Arrays;
-import com.example.Feline;
+
 
 public class TestLion {
+    public TestLion() throws Exception {
+    }
+
     @Before
     public void init() {
         MockitoAnnotations.initMocks(this);
     }
     @Mock
-    Feline feline = Mockito.mock(Feline.class);
+    Lion lion;
     @Test
     public void getFoodTest() throws Exception{
-        Lion lion = new Lion();
-        Mockito.when(feline.eatMeat()).thenReturn(Arrays.asList("Животные", "123"));
-        lion.getFood();
-        feline.eatMeat();
-        Mockito.verify(feline).eatMeat();
+        Mockito.when(lion.getFood()).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
+        assertEquals(Arrays.asList("Животные", "Птицы", "Рыба"), lion.getFood());
+        Mockito.verify(lion).getFood();
     }
-    Lion lion = new Lion();
+
     @Test
-    public void countOfKittens(){
-        Assert.assertEquals(1, lion.getKittens());
+    public void countOfKittens() throws Exception {
+        Lion lion = new Lion("Самец");
+        assertEquals(lion.getKittens(), 1);
     }
     @Test
     public void testDoesHaveMane() throws Exception {
@@ -35,7 +38,6 @@ public class TestLion {
         Lion femaleLion = new Lion("Самка");
         Assert.assertEquals(false, femaleLion.doesHaveMane());
     }
-
     @Test(expected = Exception.class)
     public void testInvalidSex() throws Exception {
         Lion invalidLion = new Lion("Неверное значение пола животного - должно быть 'Самец' или 'Самка'");

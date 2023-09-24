@@ -4,13 +4,10 @@ import java.util.List;
 
 public class Lion implements Lionfeline{
 
+
     boolean hasMane;
 
     private Lionfeline lionfeline;
-
-    public Lion(){
-        this.lionfeline = lionfeline;
-    }
 
     public Lion(String sex) throws Exception {
         if ("Самец".equals(sex)) {
@@ -23,7 +20,7 @@ public class Lion implements Lionfeline{
     }
 
     Feline feline = new Feline();
-    
+
     public int getKittens() {
         return feline.getKittens();
     }

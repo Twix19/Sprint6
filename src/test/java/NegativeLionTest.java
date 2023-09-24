@@ -1,8 +1,11 @@
 import com.example.Lion;
 import org.junit.Test;
 
-public class NegativeTestLion {
-    Lion lion = new Lion();
+public class NegativeLionTest {
+    Lion lion = new Lion("Самец");
+
+    public NegativeLionTest() throws Exception {
+    }
 
 
     @Test
