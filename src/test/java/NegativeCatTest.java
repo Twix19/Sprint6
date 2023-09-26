@@ -13,9 +13,8 @@ public class NegativeCatTest {
     @Test
     public void errorCatSound(){
         Cat cat = new Cat(feline);
-        if(cat.getSound().equals("Гав")){
-            Assert.fail("Тест провален: звук кота совпадает с ожидаемым Мяу");
-        }
+        String catSound = cat.getSound();
+        Assert.assertFalse("Тест провален: звук кота совпадает с ожидаемым Мяу",catSound != "Мяу" );
     }
     @Test
     public void errorGetFoodTest() throws Exception{

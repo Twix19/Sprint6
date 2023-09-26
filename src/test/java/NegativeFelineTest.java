@@ -1,4 +1,5 @@
 import com.example.Feline;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -11,20 +12,14 @@ public class NegativeFelineTest {
     public void errorCountOfKittens(){
         Feline feline = new Feline();
         int kittenCount = feline.getKittens();
-        if (kittenCount == 1) {
-            System.out.println("Ошибка,есть 1 котёнок");
-        }
+        Assert.assertFalse("Ошибка,есть 1 котёнок",kittenCount != 1 );
     }
     @Test
     public void errorKindOfFamily(){
-        String expectedFamily = "Кошачьи";
-        String actualFamily = feline.getFamily();
-
-        if(expectedFamily.equals(actualFamily)){
-            System.out.println("Ожидалась другая семья");
-        }
+        Feline feline = new Feline();
+        String felineFamily = feline.getFamily();
+        Assert.assertFalse("Ожидалась другая семья",felineFamily != "Кошачьи" );
     }
-
     @Test
     public void testEatMeat() throws Exception {
         List<String> expectedFood = List.of("Животные", "Птица", "Рыба");

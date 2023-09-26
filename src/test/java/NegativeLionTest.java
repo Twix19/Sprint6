@@ -1,4 +1,6 @@
+import com.example.Feline;
 import com.example.Lion;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class NegativeLionTest {
@@ -6,19 +8,10 @@ public class NegativeLionTest {
 
     public NegativeLionTest() throws Exception {
     }
-
-
     @Test
     public void errorCountOfKittens(){
-        int expectedKittens = 2;
-        int actualKittens = lion.getKittens();
-        if(actualKittens == expectedKittens){
-            System.out.println("Тест не пройден! Количество котят такое же, как и ожидалось: " + expectedKittens);
-        } else {
-            System.out.println("Тест не пройден! Количество котят такое же, как и ожидалось: " + expectedKittens);
-        }
+        Assert.assertFalse("Ошибка,есть 1 котёнок",lion.getKittens() != 1 );
     }
-
     @Test
     public void errorTestDoesHaveMane() throws Exception {
         Lion maleLion = new Lion("Самец");
@@ -32,13 +25,6 @@ public class NegativeLionTest {
     }
     @Test(expected = Exception.class)
     public void testInvalidSex() throws Exception {
-        try {
-            Lion invalidLion = new Lion("Неверное значение пола животного - должно быть 'Самец' или 'Самка'");
-            System.out.println("Ожидалась ошибка");
-        } catch (Exception e) {
-            // ожидаемая ошибка
-            throw new Exception(e);
-        }
+        Lion invalidLion = new Lion("Неверное значение пола животного - должно быть 'Самец' или 'Самка'");
     }
-
 }
