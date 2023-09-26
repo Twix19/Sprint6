@@ -1,15 +1,15 @@
 import com.example.Cat;
 import com.example.Feline;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import java.util.Arrays;
+import org.junit.jupiter.api.Test;
 public class TestCat {
 
-    @Before
+    @BeforeAll
     public void init() {
         MockitoAnnotations.initMocks(this);
     }
@@ -20,7 +20,7 @@ public class TestCat {
     @Test
     public void catSound(){
         Cat cat = new Cat(feline);
-        Assert.assertEquals(cat.getSound(),"Мяу");
+        Assertions.assertEquals(cat.getSound(),"Мяу");
     }
    @Test
     public void getFoodTest() throws Exception{

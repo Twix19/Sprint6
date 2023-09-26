@@ -1,7 +1,9 @@
-import com.example.Feline;
 import com.example.Lion;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 
 public class NegativeLionTest {
     Lion lion = new Lion("Самец");
@@ -10,21 +12,22 @@ public class NegativeLionTest {
     }
     @Test
     public void errorCountOfKittens(){
-        Assert.assertFalse("Ошибка,есть 1 котёнок",lion.getKittens() != 1 );
+        Assertions.assertFalse(lion.getKittens() != 1, "Ошибка,есть 1 котёнок");
     }
     @Test
     public void errorTestDoesHaveMane() throws Exception {
         Lion maleLion = new Lion("Самец");
-        if (!maleLion.doesHaveMane()) {
-            throw new AssertionError("Ошибка: Самец должен иметь гриву");
-        }
+        Assertions.assertTrue(maleLion.doesHaveMane(), "Ошибка: Самец должен иметь гриву");
         Lion femaleLion = new Lion("Самка");
-        if (femaleLion.doesHaveMane()) {
-            throw new AssertionError("Ошибка: Самка не должна иметь гриву");
-        }
+        Assertions.assertFalse(femaleLion.doesHaveMane(), "Ошибка: Самка не должна иметь гриву");
     }
-    @Test(expected = Exception.class)
-    public void testInvalidSex() throws Exception {
-        Lion invalidLion = new Lion("Неверное значение пола животного - должно быть 'Самец' или 'Самка'");
+
+    @Test
+    void testInvalidSex() {
+        assertThrows(Exception.class, () -> {
+            Lion invalidLion = new Lion("Неверное значение пола животного - должно быть 'Самец' или 'Самка'");
+        });
     }
 }
+
+

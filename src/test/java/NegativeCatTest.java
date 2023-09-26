@@ -1,11 +1,10 @@
-import org.junit.Test;
-import org.junit.Assert;
 import com.example.Cat;
 import com.example.Feline;
+import org.junit.jupiter.api.Assertions;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import java.util.Arrays;
-
+import org.junit.jupiter.api.Test;
 
 public class NegativeCatTest {
     @Mock
@@ -14,7 +13,7 @@ public class NegativeCatTest {
     public void errorCatSound(){
         Cat cat = new Cat(feline);
         String catSound = cat.getSound();
-        Assert.assertFalse("Тест провален: звук кота совпадает с ожидаемым Мяу",catSound != "Мяу" );
+        Assertions.assertFalse(catSound != "Мяу", "Тест провален: звук кота совпадает с ожидаемым Мяу");
     }
     @Test
     public void errorGetFoodTest() throws Exception{

@@ -24,6 +24,7 @@
     <orderEntry type="library" name="Maven: org.apache.maven:maven-repository-metadata:2.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven.wagon:wagon-provider-api:1.0-alpha-6" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-container-default:1.0-alpha-9" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: classworlds:classworlds:1.1-alpha-2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven.reporting:maven-reporting-api:3.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven.doxia:doxia-sink-api:1.0" level="project" />
@@ -35,7 +36,6 @@
     <orderEntry type="library" name="Maven: org.ow2.asm:asm-tree:9.2" level="project" />
     <orderEntry type="library" name="Maven: org.jacoco:org.jacoco.report:0.8.8" level="project" />
     <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.11.16" level="project" />
-    <orderEntry type="library" name="Maven: junit:junit:4.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-params:5.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />

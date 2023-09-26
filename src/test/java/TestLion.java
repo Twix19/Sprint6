@@ -1,19 +1,22 @@
 import com.example.Lion;
-import org.junit.Assert;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.mockito.MockitoAnnotations;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import java.util.Arrays;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 
 public class TestLion {
     public TestLion() throws Exception {
     }
 
-    @Before
+    @BeforeEach
     public void init() {
         MockitoAnnotations.initMocks(this);
     }
@@ -34,12 +37,14 @@ public class TestLion {
     @Test
     public void testDoesHaveMane() throws Exception {
         Lion maleLion = new Lion("Самец");
-        Assert.assertEquals(true, maleLion.doesHaveMane());
+        Assertions.assertEquals(true, maleLion.doesHaveMane());
         Lion femaleLion = new Lion("Самка");
-        Assert.assertEquals(false, femaleLion.doesHaveMane());
+        Assertions.assertEquals(false, femaleLion.doesHaveMane());
     }
-    @Test(expected = Exception.class)
-    public void testInvalidSex() throws Exception {
-        Lion invalidLion = new Lion("Неверное значение пола животного - должно быть 'Самец' или 'Самка'");
+    @Test
+    public void testInvalidSex() {
+        Exception exception = assertThrows(Exception.class, () -> {
+            Lion invalidLion = new Lion("Неверное значение пола животного - должно быть 'Самец' или 'Самка'");
+        });
     }
 }

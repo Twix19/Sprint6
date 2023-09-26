@@ -1,9 +1,9 @@
 import com.example.Feline;
-import org.junit.Assert;
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+
 
 
 public class NegativeFelineTest {
@@ -12,13 +12,13 @@ public class NegativeFelineTest {
     public void errorCountOfKittens(){
         Feline feline = new Feline();
         int kittenCount = feline.getKittens();
-        Assert.assertFalse("Ошибка,есть 1 котёнок",kittenCount != 1 );
+        Assertions.assertFalse(kittenCount != 1, "Ошибка,есть 1 котёнок");
     }
     @Test
     public void errorKindOfFamily(){
         Feline feline = new Feline();
         String felineFamily = feline.getFamily();
-        Assert.assertFalse("Ожидалась другая семья",felineFamily != "Кошачьи" );
+        Assertions.assertFalse(felineFamily != "Кошачьи", "Ожидалась другая семья");
     }
     @Test
     public void testEatMeat() throws Exception {
