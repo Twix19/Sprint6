@@ -1,5 +1,4 @@
 import com.example.Lion;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.MockitoAnnotations;
 import org.mockito.Mock;
@@ -24,9 +23,9 @@ public class TestLion {
     Lion lion;
     @Test
     public void getFoodTest() throws Exception{
-        Mockito.when(lion.getFood()).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
-        assertEquals(Arrays.asList("Животные", "Птицы", "Рыба"), lion.getFood());
-        Mockito.verify(lion).getFood();
+        Mockito.when(lion.eatMeat("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
+        assertEquals(Arrays.asList("Животные", "Птицы", "Рыба"), lion.eatMeat("Хищник"));
+        Mockito.verify(lion).eatMeat("Хищник");
     }
 
     @Test
